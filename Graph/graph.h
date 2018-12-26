@@ -1,6 +1,9 @@
 //*********** Graph.h **************//
 // 图的基类
 
+#ifndef __GRAPH_H__
+#define __GRAPH_H__
+
 #define UNVISITED 0
 #define VISITED   1
 #define INFINITE 0xffffffff
@@ -91,3 +94,4 @@ public:
     virtual void delEdge(int from, int to) = 0;
 };
 
+#endif

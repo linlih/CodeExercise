@@ -1,6 +1,9 @@
 // 图的邻接表实现
+#ifndef __GRAPHL_H__
+#define __GRAPHL_H__
 
 #include "graph.h"
+#include <queue>
 
 #define UNVISITED 0
 #define VISITED   1
@@ -144,17 +147,50 @@ public:
     void InitGraphl(Graphl *graphl, int A[N][N]);
     void DFS(Graph& G, int v);
     void BFS(Graph& G, int v);
-    void Vist(Graph& G, int v);
+    void Visit(Graph& G, int v);
 };
 
 void Graphl::InitGraphl(Graphl *graphl, int A[N][N]) {
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
-
+            if (A[i][j] > 0) {
+                graphl->setEdge(i, j, A[i][j]);
+            }
         }
     }
 }
 
+void Graphl::DFS(Graph& G, int v) {
+    G.Mark[v] = VISITED;
+    Visit(G, v);
+
+    for(Edge = G.FirstEdge(v); G.IsEdge(e); e = G.NextEdge(e)){
+        if (G.Mark[G.ToVertex(e)] == UNVISITED)
+            DFS(G, G.ToVertex(e));
+    }
+}
+
+void Graphl::BFS(Graph& G, int v) {
+    using std::queue;
+    queue<int> Q;
+    Visit(G, v);
+    G.Mark[v] = VISITED;
+    Q.push(v);
+    while(!Q.empty()) {
+        int u = Q.front();
+        Q.pop();
+
+        for (Edge e = G.FirstEdge(u); G.IsEdge(e); e = G.NextEdge(e)) {
+            Visit(G, G.ToVertex(e));
+            G.Mark[G.ToVertex(e)] = VISITED;
+            Q.push(G.ToVertex(e));
+        }
+    }
+}
+
+void graphl::Visit(Graph& G, int v) {
+    cout << 'V' << v << " ";
+}
 
 
-
+#endif
