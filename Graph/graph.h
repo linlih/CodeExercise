@@ -6,7 +6,7 @@
 
 #define UNVISITED 0
 #define VISITED   1
-#define INFINITE 0xffffffff
+#define INFINITE 9999
 
 class Edge {
 public:

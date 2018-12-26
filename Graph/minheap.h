@@ -8,7 +8,7 @@
 
 template <class T>
 class MinHeap {
-private:
+public:
     T *heapArray;
     int CurrentSize;
     int MaxSize;
@@ -135,7 +135,7 @@ void MinHeap<T>::SiftDown(int left) {
         if ((j < CurrentSize - 1) && (heapArray[j] > heapArray[j + 1]))
             j ++;
         if (temp > heapArray[j]) {
-            heapArray[i] = heapArray[i];
+            heapArray[i] = heapArray[j];
             i = j;
             j = leftchild(j);
         }
