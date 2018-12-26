@@ -44,6 +44,7 @@ void Floyd(Graph &G, Dist **&D) {
 
 }
 
+// 对应张铭老师《数据结构与算法》P183, 图 7.20
 int A[N][N] = {
 //  v0 v1 v2
     0,  INFINITE,  2,
