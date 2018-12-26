@@ -10,31 +10,6 @@ using namespace std;
 
 using namespace std;
 
-class Dist {
-public:
-    int index;
-    int length;
-    int pre;
-    Dist() {};
-    ~Dist() {};
-
-    bool operator < (const Dist &arg) {
-        return (length < arg.length);
-    }
-    bool operator == (const Dist &arg) {
-        return (length == arg.length);
-    }
-    bool operator > (const Dist &arg) {
-        return (length > arg.length);
-    }
-    bool operator <= (const Dist &arg) {
-        return (length <= arg.length);
-    }
-    bool operator >= (const Dist &arg) {
-        return (length >= arg.length);
-    }
-};
-
 void Dijkstra(Graph &G, int s, Dist* &D) {
     D = new Dist[G.VerticesNum()];
     for (int i = 0; i < G.VerticesNum(); i++) {
@@ -90,7 +65,6 @@ int A[N][N] = {
     0, 10, 20,  0,  60,
     0,  0,  0,  0,   0,
 };
-
 
 int main(int argc, char const *argv[])
 {

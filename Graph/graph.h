@@ -8,6 +8,31 @@
 #define VISITED   1
 #define INFINITE 9999
 
+class Dist {
+public:
+    int index;
+    int length;
+    int pre;
+    Dist() {};
+    ~Dist() {};
+
+    bool operator < (const Dist &arg) {
+        return (length < arg.length);
+    }
+    bool operator == (const Dist &arg) {
+        return (length == arg.length);
+    }
+    bool operator > (const Dist &arg) {
+        return (length > arg.length);
+    }
+    bool operator <= (const Dist &arg) {
+        return (length <= arg.length);
+    }
+    bool operator >= (const Dist &arg) {
+        return (length >= arg.length);
+    }
+};
+
 class Edge {
 public:
     int weight; // 边的权值
@@ -82,9 +107,10 @@ public:
         return oneEdge.weight;
     }
 
-    bool IsEdge(Edge oneEdge) {
+    virtual bool IsEdge(Edge oneEdge) {
         // 是边的条件要满足权值大于零小于INFINITE并且有边的终点
         if  (oneEdge.weight > 0 && oneEdge.weight < INFINITE && oneEdge.to >= 0)
+        // if  (oneEdge.weight > 0&& oneEdge.to >= 0) // 如果是Floyd算法，需要使用这个判断
             return true;
         else 
             return false;
