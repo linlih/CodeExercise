@@ -19,7 +19,7 @@ using namespace std;
 
 template<class T>
 class BinaryTree {
-private:
+protected:
     BinaryTreeNode<T>* root;
 public:
     BinaryTree() {root = NULL;};
@@ -38,7 +38,7 @@ public:
     void PostOrderWithoutRecursion(BinaryTreeNode<T>* root);
     void LevelOrder(BinaryTreeNode<T>* root);
     void DeleteBinaryTree(BinaryTreeNode<T>* root);
-    void Visit(T value) {cout << value;};
+    void Visit(T value) {cout << value << " ";};
 };
 
 template<class T>
@@ -54,7 +54,7 @@ BinaryTreeNode<T>* BinaryTree<T>::Parent(BinaryTreeNode<T>* current) {
     if (NULL != root && NULL != current) {
         while (!aStack.empty() || pointer) {
             if (pointer) {
-                if (current = pointer->leftchild() || current = pointer->rightchild())
+                if (current == pointer->leftchild() || current == pointer->rightchild())
                     return pointer;
                 aStack.push(pointer);
                 pointer = pointer->leftchild();

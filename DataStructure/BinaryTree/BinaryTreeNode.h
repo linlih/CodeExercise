@@ -2,10 +2,12 @@
 #define __BINARYTREENODE_H__
 
 template <class T> class BinaryTree;
+template <class T> class BinarySearchTree;
 
 template <class T>
 class BinaryTreeNode {
 friend class BinaryTree<T>;
+friend class BinarySearchTree<T>;
 private:
     T info;
     BinaryTreeNode<T>* left;
