@@ -1,16 +1,16 @@
-#define ARRAYSIZE 1000
+#define ARRAYSIZE 100
 
 int main(int argc, char const *argv[])
 {
     Randomize();
 
-    int listsize = 1000;
+    int listsize = ARRAYSIZE;
     int *array;
     array = new int[ARRAYSIZE];
     int i;
 
     for (i = 0; i < ARRAYSIZE; i++) {
-        array[i] = Random(1000);
+        array[i] = Random(ARRAYSIZE);
     }
     Print(array, listsize);
 
