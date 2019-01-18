@@ -22,7 +22,7 @@ int main(int argc, char const *argv[])
                 tmp_i = i;
                 tmp_j = j;
             }
-
+    
             
         }
     } 
