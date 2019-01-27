@@ -84,7 +84,6 @@ int main(int argc, char const *argv[])
 
     for (int i = 0; i < M; i++) {
         cin >> temp_s >> temp_d;
-        cnt = 0;
         for (int j = temp_s; j <= temp_d; j++) {
             if (area->at(j) != 1) {
                 area->at(j) = 1;
