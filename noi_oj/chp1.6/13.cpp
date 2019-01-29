@@ -24,6 +24,34 @@ using namespace std;
 若一个整数的数字和能被9整除，则这个整数能被9整除。
 */
 
+int* big_add(int *a, int *b, int *res) {
+    int tmp;
+
+    for (int i = 0; i < 210; ++i) {
+        tmp = res[i] + a[i] + b[i];
+        if (tmp >= 10) {
+            res[i] = tmp%10;
+            res[i+1] = tmp/10;
+        }
+        else {
+            res[i] = tmp;
+        }
+    }
+    return res;
+}
+
+    int res[220] = {0};
+    int tmp;
+    for (int i = 0; i < 210; ++i) {
+        if ((res[i] + a[i]) < b[i]) { // 接上res[i]是为了解决这种情况：987-87 结果为：9-19
+            res[i] = res[i] + a[i] + 10 - b[i];
+            res[i+1] = res[i+1] - 1;
+        }
+        else {
+            res[i] = res[i] + a[i] - b[i];
+        }
+    }
+
 void str2arr(string &str, int *arr) {
     for (int i = 0; i < str.length(); ++i) {
         arr[str.length() - i - 1] = (str[i] - '0');
