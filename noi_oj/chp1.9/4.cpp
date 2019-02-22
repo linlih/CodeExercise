@@ -7,7 +7,7 @@ typedef struct info {
     int final_s;
     int class_s;
     int paper;
-    char name[21];
+    char name[21]; // 这里要注意name变量的防止顺序，如果放在最后面会导致读入失败，输出的name为空白
     char stu_c[1];
     char west[1];
 }info;
