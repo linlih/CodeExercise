@@ -10,9 +10,8 @@ void SelectSort(Record Array[], int n) {
         for (int j = i+1; j < n; j++) {
             if (Array[j] < Array[smallest])
                 smallest = j;
-            
-        swap(Array, i, smallest);
         }
+        swap(Array, i, smallest);
     }
 }
 
