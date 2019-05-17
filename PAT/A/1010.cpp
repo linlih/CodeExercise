@@ -12,10 +12,6 @@ typedef struct data  {
     double price;
 }data;
 
-// bool myCompare(data* d1, data* d2) {
-//     return d1->price > d2->price;
-// }
-
 bool myCompare(data& d1, data& d2) {
     return d1.price > d2.price;
 }
