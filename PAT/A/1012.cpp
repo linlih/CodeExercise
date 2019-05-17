@@ -18,6 +18,7 @@ string to_radix(long num, int radix) {
     }
     return res;
 }
+
 int main(int argc, char const *argv[])
 {
     long a, b;
