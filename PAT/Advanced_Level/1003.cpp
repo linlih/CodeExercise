@@ -17,11 +17,12 @@ int main(int argc, char const *argv[])
     int num[510] = {0};
     int w[510] = {0};
 
+    fill(graph[0], graph[0] + 510 * 510, inf);
+    fill(dis, dis + 510, inf);
+
     for (int i = 0; i < num_cities; ++i) {
         cin >> rescue_teams[i];
         cin >> skipws;
-        cout   << rescue_teams[i] << endl;
-
     }
     int c1, c2, length; 
     for (int i = 0; i < num_roads; ++i) {
@@ -51,14 +52,11 @@ int main(int argc, char const *argv[])
                     dis[v] = dis[u] + graph[u][v];
                     num[v] = num[u];
                     w[v] = w[u] + rescue_teams[v];
-                    cout << "1" << num[v] << endl;
                 }
                 else if (dis[u] + graph[u][v] == dis[v]) {
                     num[v] = num[v] + num[u];
                     if (w[u] + rescue_teams[v] > w[v])
                         w[v] = w[u] + rescue_teams[v];
-                    cout << "2" <<num[v] << endl;
-
                 }
             }
         }
