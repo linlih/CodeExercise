@@ -9,17 +9,17 @@
 
 using namespace std;
 
+map<string ,set<int> > title, author, keyword, pub, year;
+
 void query(map<string, set<int> > &m, string & str) {
     if (m.find(str) != m.end()) {
         for (auto it = m[str].begin(); it != m[str].end(); it++) {
-            printf("%7d\n", *it);
+            printf("%07d\n", *it); // 这里一定要写成07d，写成7d会答案错误
         }
     }
     else 
         cout << "Not Found\n";
 }
-
-map<string ,set<int> > title, author, keyword, pub, year;
 
 int main(int argc, char const *argv[])
 {
@@ -46,12 +46,11 @@ int main(int argc, char const *argv[])
     int m;
     int num;
     scanf("%d", &m);
-    cout << m << endl;
     for (int i = 0; i < m; ++i) {
         scanf("%d: ", &num);
         string temp;
         getline(cin, temp);
-        cout << num << ": " << temp << endl;
+        cout << num << ": " << temp << "\n";
         if (num == 1) query(title, temp);
         else if (num == 2) query(author, temp);
         else if (num == 3) query(keyword, temp);
