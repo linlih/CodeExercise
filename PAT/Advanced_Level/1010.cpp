@@ -35,15 +35,16 @@ long long find_radix(string n, long long num) {
 
 int main(int argc, char const *argv[])
 {
-    string n1, n2;
-    long long  tag, radix, result_radix;
-    cin >> n1 >> n2 >> tag >> radix;
-    result_radix = tag == 1 ? find_radix(n2, convert(n1, radix)) : find_radix(n1, convert(n2, radix));
-    if (result_radix != -1) {
-        printf("%lld", result_radix);
-    }
-    else {
-        printf("Impossible");
-    }
+    // string n1, n2;
+    // long long  tag, radix, result_radix;
+    // cin >> n1 >> n2 >> tag >> radix;
+    // result_radix = tag == 1 ? find_radix(n2, convert(n1, radix)) : find_radix(n1, convert(n2, radix));
+    // if (result_radix != -1) {
+    //     printf("%lld", result_radix);
+    // }
+    // else {
+    //     printf("Impossible");
+    // }
+    printf("%ld\n", convert(string("123"), 10));
     return 0;
 }
