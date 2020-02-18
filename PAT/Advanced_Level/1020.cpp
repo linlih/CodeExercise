@@ -35,7 +35,7 @@ int main(int argc, char const *argv[])
     for (int i = 0; i < n; i++) scanf("%d", &post[i]);
     for (int i = 0; i < n; i++) scanf("%d", &in[i]);
     pre(n - 1, 0, n - 1, 0);
-    sort(ans.begin(), ans.end(), cmp);
+    sort(ans.begin(), ans.end(), cmp); // 为什要加一个排序呢？
     for (int i  = 0; i < ans.size(); i++) {
         if (i != 0) cout << " ";
         cout << ans[i].value;
@@ -43,3 +43,5 @@ int main(int argc, char const *argv[])
 
     return 0;
 }
+
+
