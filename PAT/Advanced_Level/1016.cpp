@@ -11,11 +11,14 @@ struct node {
     int status, month, time, day, hour, minute;
 };
 
+// 按照题目要求的，名字不同的按照字母的顺序
 bool cmp(node a, node b) {
     return a.name != b.name ? a.name < b.name : a.time < b.time;
 }
 
+// 从第0小时开始计算价格
 double billFromZero(node call, int *rate) {
+    // rate[0] ~ rate[23]中存了0~23的24小时每个小时费用，rate[24]是24个小时费用的加和
     double total = rate[call.hour] * call.minute + rate[24] * 60 * call.day;
     for (int i = 0; i < call.hour; i++) {
         total += rate[i] * 60;
@@ -28,7 +31,7 @@ int main(int argc, char const *argv[])
     int rate[25] = {0}, n;
     for (int i = 0; i < 24; i++) {
         scanf("%d", &rate[i]);
-        rate[24] += rate[i];
+        rate[24] += rate[i]; // rate[24]用来存储一天的费用cent/minute
     }
     scanf("%d", &n);
     vector<node> data(n);
@@ -38,6 +41,7 @@ int main(int argc, char const *argv[])
         string temp;
         cin >> temp;
         data[i].status = (temp == "on-line") ? 1:0;
+        // 遇到时间的问题，一般都要转化成分或者秒的形式
         data[i].time = data[i].day * 24 * 60 + data[i].hour * 60 + data[i].minute;
     }
     sort(data.begin(), data.end(), cmp);
@@ -62,3 +66,5 @@ int main(int argc, char const *argv[])
     }
     return 0;
 }
+
+
