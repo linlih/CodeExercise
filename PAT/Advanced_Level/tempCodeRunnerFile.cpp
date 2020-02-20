@@ -1,54 +1,47 @@
-/ 正确的代码 牛客网：https://www.nowcoder.com/pat/1/problem/3992
-// #include<cstdio>
-// #include <iostream>
-// #include<cstring>
-// #include<string>
-// #include<map>
+/*
+//    问题描述：
+//    解题思路： 
+//  */
+// #include <bits/stdc++.h>
+
 // using namespace std;
-// map<string, int> mp;
-// int a[2000][4], have[102];
-// char c[4] = { 'A','C','M','E' };
-// int main() {
+
+// struct student {
+//     long long int no;
+//     int score, finalrank, local, localrank;
+// };
+
+// bool cmp(student a, student b) {
+//     return a.score != b.score ? a.score > b.score : a.no < b.no;
+// }
+
+// int main(int argc, char const *argv[]) {
 //     int n, m;
-//     char s[10];
-//     scanf("%d%d", &n, &m);
-//     for (int i = 0; i < n; i++) {
-//         scanf("%s%d%d%d", s, &a[i][1], &a[i][2], &a[i][3]);
-//         a[i][0] = (a[i][1] + a[i][2] + a[i][3]) / 3;
-//         mp[s] = i;
+//     scanf("%d", &n);
+//     vector<student> fin;
+//     for (int i = 1; i <= n; i++) {
+//         scanf("%d", &m);
+//         vector<student> v(m);
+//         for (int j = 0; j < m; j++) {
+//             scanf("%lld %d", &v[j].no, &v[j].score);
+//             v[j].local = i;
+//         }
+//         sort(v.begin(), v.end(), cmp);
+//         v[0].localrank = 1;
+//         fin.push_back(v[0]);
+//         for (int j = 1; j < m; j++) {
+//             v[j].localrank = (v[j].score == v[j - 1].score) ? (v[j - 1].localrank) : (j + 1);
+//             fin.push_back(v[j]);
+//         }
 //     }
-//     for (int i = 0; i < 4; i++) {
-//         memset(have, 0, sizeof(have));
-//         // 利用数组计算排名
-//         for (int j = 0; j < n; j++) {
-//             have[a[j][i]]++;
-//             //cout << "add : " << a[j][i] << " " << have[a[j][i]] << endl;
-//         }
-//         for (int j = 100; j >= 0; j--) {
-//             have[j] += have[j + 1]; 
-//         }
-//         // a[j][i] = 90
-//         for (int j = 0; j < n; j++) {
-//             //cout << "test: " << a[j][i] << " " << have[a[j][i]] << endl;
-//             a[j][i] = have[a[j][i] + 1] + 1; // ？
-//         }
-//         break;
+//     sort(fin.begin(), fin.end(), cmp);
+//     fin[0].finalrank = 1;
+//     for (int j = 1; j < fin.size(); j++) {
+//         fin[j].finalrank = (fin[j].score == fin[j - 1].score) ? fin[j - 1].finalrank : j + 1;
 //     }
-//     for (int i = 0; i < m; i++) {
-//         scanf("%s", s);
-//         auto it = mp.find(s);
-//         if(it==mp.end()){
-//             printf("N/A\n");
-//         }
-//         else {
-//             int t = 0;
-//             for (int j = 1; j < 4; j++) {
-//                 if (a[it->second][j] < a[it->second][t]) {
-//                     t = j;
-//                 }
-//             }
-//             printf("%d %c\n", a[it->second][t], c[t]);
-//         }
+//     printf("%d\n", fin.size());
+//     for (int i = 0; i < fin.size(); i++) {
+//         printf("%013lld %d %d %d\n", fin[i].no, fin[i].finalrank,fin[i].local, fin[i].localrank);
 //     }
 //     return 0;
 // }
