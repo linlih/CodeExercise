@@ -10,7 +10,7 @@ int main(int argc, char const *argv[]) {
     string out;
     out.push_back('#');
 
-    int a;
+    int a;1
     string tmp;
     for (int i = 0; i < 3; i++) {
         scanf("%d", &a);
