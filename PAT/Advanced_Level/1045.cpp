@@ -21,7 +21,7 @@ int main(int argc, char const *argv[]) {
         if (book[x] >= 1)
             a[num++] = book[x];
     }
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < num; i++) {
         dp[i] = 1;
         for (int j = 0; j < i; j++)
             if (a[i] >= a[j])
