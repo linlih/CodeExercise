@@ -1,33 +1,40 @@
 /*
-   问题描述：
-   解题思路： 
- */
-#include <bits/stdc++.h>
+//    问题描述：
+//    解题思路： 
+//    有一个样例超时
+//  */
+// #include <bits/stdc++.h>
 
-using namespace std;
-
-int book[201], a[10001], dp[10001];
-
-int main(int argc, char const *argv[]) {
-    int n, m, x, l, num = 0, maxn = 0;
-    scanf("%d %d", &n, &m);
-    for (int i = 1; i <= m; i++) {
-        scanf("%d", &x);
-        book[x] = i;
-    }
-    scanf("%d", &l);
-    for (int i = 0; i < l; i++) {
-        scanf("%d", &x);
-        if (book[x] >= 1)
-            a[num++] = book[x];
-    }
-    for (int i = 0; i < n; i++) {
-        dp[i] = 1;
-        for (int j = 0; j < i; j++)
-            if (a[i] >= a[j])
-                dp[i] = max(dp[i], dp[j] + 1);
-        maxn = max(dp[i], maxn);
-    }
-    printf("%d", maxn);
-    return 0;
-}
+// using namespace std;
+// int main(int argc, char const *argv[]) {
+//     int n, k;
+//     cin >> n >> k;
+//     map<int, vector<string>> course;
+//     string name;
+//     int id;
+//     int m;
+//     for (int i = 0; i < n; i++) {
+//         cin >> name;
+//         cin >> skipws;
+//         cin >> m;
+//         cin >> skipws;
+//         for (int j = 0; j < m; j++) {
+//             cin >> id;
+//             cin >> skipws;
+//             if (course.find(id) == course.end()) {
+//                 vector<string> tmp;
+//                 course.insert(make_pair(id, tmp));
+//                 course[id].push_back(name);
+//             }
+//             else 
+//                 course[id].push_back(name);
+//         }
+//     }
+//     for (int i = 1; i <= k; i++) {
+//         cout << i << " " << course[i].size() << endl;
+//         sort(course[i].begin(), course[i].end());
+//         for (int j = 0; j < course[i].size(); j++)
+//             cout << course[i][j] << endl;
+//     }
+//     return 0;
+// }
