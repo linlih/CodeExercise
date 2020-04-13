@@ -39,6 +39,22 @@ public:
     }
 };
 
+// 最优解
+class Solution_best {
+public:
+    int singleNumber(vector<int>& num) {
+        // 这两句话的意思参考：https://stackoverflow.com/questions/31162367/significance-of-ios-basesync-with-stdiofalse-cin-tienull/31165481#31165481
+        ios_base::sync_with_stdio(false); // 解绑C/C++的输入buffer
+        cin.tie(null); // 解绑cin和cout
+
+        int res = nums[0];
+        int sz = nums.size();
+        for (int i = 1; i< sz; ++i)
+            res ^= nums[i]; // 利用异或
+        return res;
+    }
+}
+
 int main(int argc, char const *argv[]) {
     
     Solution sol;

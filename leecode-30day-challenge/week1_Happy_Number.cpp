@@ -12,7 +12,6 @@ public:
     int sum(int num) {
         int sum = 0;
         while(num>0) {
-            
             int digit = num % 10;
             num /= 10;
             sum = sum + ( digit * digit);
@@ -21,7 +20,7 @@ public:
     }
     
     bool isHappy(int n) {
-        map<int, int> seen;
+        map<int, int> seen; // 创建一个序列记录计算结果
         int theSum = n;
         while(1) {
             theSum = sum(theSum);
