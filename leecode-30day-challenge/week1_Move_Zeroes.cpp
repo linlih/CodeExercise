@@ -37,6 +37,7 @@ public:
     }
 };
 
+
 int main(int argc, char const *argv[]) {
     Solution sol;
     vector<int> nums;
