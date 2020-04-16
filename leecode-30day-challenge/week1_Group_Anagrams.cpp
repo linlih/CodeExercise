@@ -95,25 +95,31 @@ public:
     }
 };
 
+// 这个实现方法运行时间为：52ms
 class Solution_2 {
 public:
     vector<vector<string>> groupAnagrams(vector<string>& strs) {
         vector<vector<string>> res;
         unordered_map<string, int> m; // 创建一个map信息，这个map不排序
+        int count = -1;
         for (string str : strs) {
             string t = str;
             sort(t.begin(), t.end());
-            if (!m.count(t)) {
-                m[t] = res.size(); // 0 1 2 3 这样的顺序
-                res.push_back({});
+            if (m.count(t)) {
+                res[m[t]].push_back(str);
+            } else {
+                //m[t] = res.size(); // 0 1 2 3 这样的顺序
+                m[t] = ++count; // 0 1 2 3 这样的顺序
+                //res.push_back({});
+                res.push_back({str});
             }
-            res[m[t]].push_back(str);
         }
         return res;
     }
 };
 
-// 最优解和上面的Solution_2的实现方法是一样的
+// 最优解和上面的Solution_2的实现方法是一样的，但是这个实现只有：20ms
+// 导致几十毫秒的差距的原因：和评测环境有关，将最优解直接提交，测试结果也要60ms
 class Solution_Best {
 public:
     vector<vector<string>> groupAnagrams(vector<string>& strs) {
@@ -121,7 +127,8 @@ public:
         vector<vector<string>> result;
         int count = -1;
         for (auto str: strs) {
-            string sig = sort(sig.begin(), sig.end());
+            string sig = str;
+            sort(sig.begin(), sig.end());
             if (anagramMap.count(sig)) {
                 result[anagramMap[sig]].push_back(str);
             } else {
@@ -129,6 +136,7 @@ public:
                 anagramMap[sig] = ++ count;
             }
         }
+        return result;
     }
 }
 // 唯独多了一个这个代码
