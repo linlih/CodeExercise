@@ -57,7 +57,7 @@ public:
  * int param_1 = obj->get(key);
  * obj->put(key,value);
  */
-
+// 创建一个双向链表
 class LRUNode{
 public:
     int key;
@@ -65,7 +65,6 @@ public:
     LRUNode * prev;
     LRUNode * next;
 };
-
 
 class LRUCache_Best {
 
@@ -92,8 +91,7 @@ public:
 
         // remove node from list. stitching up list
         // if there is a prev link then its an exiting node
-        if ( node->prev )
-        {
+        if ( node->prev ) {
             node->prev->next = node->next;
             node->next->prev = node->prev;
         }
@@ -111,9 +109,7 @@ public:
 
         if (!node)
             return -1;
-
         moveNodeToHead(node);
-
         return m_root->value;
     }
 
@@ -137,12 +133,11 @@ public:
                 node = m_root->prev;
                 node->key = key;
                 node->value = value;
-           } else {
+            } else {
                 node = new LRUNode;
                 node->key = key;
                 node->value = value;
-                if ( !m_root )
-                {
+                if ( !m_root ) {
                     m_root = node;
                     m_root->next = m_root;
                     m_root->prev = m_root;
@@ -154,16 +149,55 @@ public:
                 }
 
            }
-
-
             // add to hash map and set nodes value
             m_map[key] = node;
             m_root = node;
         }
-
         return;
     }
 
+};
+
+
+class LRUCache_1 {
+public:
+    unordered_map<int,list<pair<int,int>>::iterator> mymap;
+    list<pair<int,int>> v_l;
+    int cap;
+    LRUCache(int capacity) {
+        ios::sync_with_stdio(false);
+        cin.tie(nullptr);
+        cout.tie(nullptr);
+        cap=capacity;
+    }
+    
+    int get(int key) {
+        if(mymap.find(key)==mymap.end()) return -1;
+        v_l.splice(v_l.end(),v_l,mymap[key]);
+        return (--v_l.end())->second;
+    }
+    
+    void put(int key, int value) {
+        if(mymap.find(key)!=mymap.end())
+        {
+           mymap[key]->second=value;
+           v_l.splice(v_l.end(),v_l,mymap[key]);
+        }
+        else if(mymap.size()==cap)
+        {
+            mymap.erase(v_l.begin()->first);
+            v_l.erase(v_l.begin());
+            v_l.push_back(make_pair(key,value));
+            mymap[key]=--v_l.end();
+        }
+        else
+        {
+             v_l.push_back(make_pair(key,value));
+             mymap[key]=--v_l.end();
+        }
+       
+        
+    }
 };
 int main(int argc, char const *argv[]) {
 
