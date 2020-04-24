@@ -1,33 +1,18 @@
-class Solution {
-public:
-    bool checkValidString(string s) {
-        string s1, s2, s3;
-        s1 = s2 = s3 = s;
-        auto it = s.find('*');
-        if (it != s.end()) {
-            s1.erase(it, it+1);
-            s2.replace(it, it+1, "(");
-            s3.replace(it, it+1, ")");
+      for (int i = m + 1; i <=n; i++) {
+            int2bit(i, tmp2);
+            for (int j = 0; j < 20; j++) {
+                if (tmp1[j] == 1 && tmp2[j] == 1)
+                    tmp1[j] = 1;
+                else
+                    tmp1[j] = 0;
+                cout << (int)tmp2[j] << endl;
+                tmp2[j] = 0;
+            }
         }
-        stack<char> st;
-        stack<char> empty;
-        for (int i = 0; i < s.size(); i++) {
-            if (s1[i] == '(') st.push('(');
-            else if (s1[i] == ')') st.pop();
+        int res = 0;
+        int index = 1;
+        for (int i = 0; i < 20; i++) {
+            res = tmp1[i]*index;
+            index *= 10;
         }
-        if (st.size() == 0) return true;
-        swap(st, empty);
-        for (int i = 0; i < s.size(); i++) {
-            if (s2[i] == '(') st.push('(');
-            else if (s2[i] == ')') st.pop();
-        }
-        if (st.size() == 0) return true;
-        swap(st, empty);
-        for (int i = 0; i < s.size(); i++) {
-            if (s3[i] == '(') st.push('(');
-            else if (s3[i] == ')') st.pop();
-        }
-        if (st.size() == 0) return true;
-        else return false;
-    }
-};
+        return res;
