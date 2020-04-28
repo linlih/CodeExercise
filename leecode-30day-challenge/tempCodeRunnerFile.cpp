@@ -1,18 +1,11 @@
-      for (int i = m + 1; i <=n; i++) {
-            int2bit(i, tmp2);
-            for (int j = 0; j < 20; j++) {
-                if (tmp1[j] == 1 && tmp2[j] == 1)
-                    tmp1[j] = 1;
-                else
-                    tmp1[j] = 0;
-                cout << (int)tmp2[j] << endl;
-                tmp2[j] = 0;
-            }
+class Solution {
+public:
+    bool canJump(vector<int>& nums) {
+        vector<int> dp(nums.size(), 0);
+        for (int i = 1; i , nums.size(); i++) {
+            dp[i] = max(dp[i-1], nums[i-1]) - 1;
+            if (dp[i]  < 0) return false;
         }
-        int res = 0;
-        int index = 1;
-        for (int i = 0; i < 20; i++) {
-            res = tmp1[i]*index;
-            index *= 10;
-        }
-        return res;
+        return true;
+    }
+};
