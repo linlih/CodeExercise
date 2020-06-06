@@ -66,7 +66,7 @@ int main(int argc, char const *argv[]) {
         if (i != a[i]) {
             while (a[0] != 0) {
                 swap(a[0], a[a[0]]);
-                cout << a[0] << ":" << a[a[0]] << endl;
+                //cout << a[0] << ":" << a[a[0]] << endl;
                 cnt++;
             }
             if (i != a[i]) {
