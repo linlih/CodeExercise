@@ -36,7 +36,7 @@ int main(int argc, char const *argv[]) {
         e[a][b] = e[b][a] = tempdis;
     }    
     int ansid = -1;
-    double andis = -1, ansaver = inf;
+    double ansdis = -1, ansaver = inf;
     // 利用Dijkstra算法查找每个Gas Station到村庄最长的路径
     for (int index = n + 1; index <= n + m; index ++) {
         double mindis = inf, aver = 0;
@@ -44,10 +44,12 @@ int main(int argc, char const *argv[]) {
         fill(visit, visit + 1020, false);
         dis[index] = 0;
         for (int i = 0; i < n + m; i++) {
-            int u = -1; minn = inf;
+            int u = -1, minn = inf;
             for (int j = 1; j <= n + m; j++) {
-                u = j;
-                minn = dis[j];
+                if (visit[j] == false && dis[j] < minn) {
+                    u = j;
+                    minn = dis[j];
+                }
             }
             if (u == -1) break;
             visit[u] = true;
