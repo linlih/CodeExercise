@@ -5,3 +5,8 @@
 
 2. 图
     dfs+dijkstra      1087.All Roads Lead to Rome (30分)
+
+3. 算术运算
+    这两道题的核心是最大公约数的求法，使用辗转相除法
+    有理数分数四则运算     1088.Rational Arithmetic (20分)
+    有理数分数求和         1081.Rational Sum (20分)
