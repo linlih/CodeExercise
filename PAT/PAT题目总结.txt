@@ -15,3 +15,7 @@
     判断是否是插入排序，归并排序的序列 1089.Insert or Merge (25分)
         延展：如果是判断是否是快排序列，选择排序序列，桶排序序列呢？
         
+5. 深度搜索
+    使用深度优先搜索的方法
+    供应链最大价格 1090.Highest Price in Supply Chain (25分)
+    供应链所有价格 1079.Total Sales of Supply Chain (25分)
