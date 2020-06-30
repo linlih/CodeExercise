@@ -7,7 +7,7 @@
 using namespace std;
 
 int n, maxdepth = 0, maxnum = 0, temp, root;
-vector<int> v[10010];
+vector<int> v[100010];
 
 void dfs(int index, int depth) {
     if (v[index].size() == 0) {
@@ -26,6 +26,7 @@ void dfs(int index, int depth) {
 int main(int argc, char const *argv[]) {
     freopen("input.txt","r",stdin);
     double p, r;
+    scanf("%d %l %f", &n, &p, &r);
     for (int i = 0; i < n; ++i) {
         scanf("%d", &temp);
         if (temp == -1)
