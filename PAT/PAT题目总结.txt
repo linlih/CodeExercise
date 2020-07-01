@@ -28,3 +28,6 @@
     判断字符串是否存在对应数量字符 1092.To Buy or Not to Buy (20分)
     根据条件排序车辆停留时间       1095. Cars on Campus (30) 
     连续因数                       1096.Consecutive Factors (20分)
+
+7. 链表
+    去掉链表中重复的元素 1097. Deduplication on a Linked List (25)
