@@ -20,6 +20,12 @@ int main(int argc, char const *argv[]) {
         sort(a, a + i + 1);
     }
     else {
+        /**
+         *  归并排序例子如下：
+         *  3 1 2 8 7 5 9 4 0 6
+         *  1 3 2 8 5 7 4 9 0 6
+         *  判断思路是将a序列排序成b序列
+         */
         cout << "Merge Sort" << endl;
         int k = 1, flag = 1;
         while(flag) {
@@ -31,7 +37,7 @@ int main(int argc, char const *argv[]) {
             k = k * 2;
             for (int i = 0; i < n/k; ++i) 
                 sort(a + i * k, a + (i + 1) * k);
-            sort(a + n / k * k, a + n);
+            sort(a + n / k * k, a + n); // 排序最后的小段
         }
     }
     for (int j = 0; j < n; ++j) {

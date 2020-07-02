@@ -9,8 +9,9 @@ using namespace std;
 void downAdjust(vector<int> &b, int low, int high) {
     int i = 1, j = i * 2;
     while(j <= high) {
-        if (j + 1 <= high && b[j] < b[j+1]) j = j + 1;
-        if (b[i] >= b[j]) break;
+        // 注意这里是大顶堆，并且下标是从1开始的
+        if (j + 1 <= high && b[j] < b[j+1]) j = j + 1; // 找到结点孩子中最大的值
+        if (b[i] >= b[j]) break; // 已满足大顶堆的条件
         swap(b[i], b[j]);
         i = j; j = i * 2;
     }
@@ -32,6 +33,11 @@ int main(int argc, char const *argv[]) {
     }
     else {
         printf("Heap Sort\n");
+        /**
+         * 堆排序例子：可以看到这是一个大顶堆
+         * 3 1 2 8 7 5 9 4 6 0
+         * 6 4 5 1 0 3 2 7 8 9
+         */
         p = n;
         while(p > 2&& b[p] >= b[1]) p--;
         swap(b[1], b[p]);
