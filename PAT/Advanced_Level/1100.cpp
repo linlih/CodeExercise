@@ -32,9 +32,12 @@ int main(int argc, char const *argv[]) {
     freopen("input.txt","r",stdin);
     int n;
     cin >> n;
+    getchar(); // 用户输入完年龄后按回车结束输入，把“\n”留在了输入流里，而cin不会主动删除输入流内的换行符，这样换行符就被getline读取到，getline遇到换行符返回，因此程序不会等待用户输入。所以要读入下一个字符
+    //cin.ignore();// 也可以使用这个方式
     for (int i = 0; i < n; ++i) {
         getline(cin, s);
-        if (s[0] > '0' && s[0] < '9')
+        len = s.length();
+        if (s[0] >= '0' && s[0] <= '9')
             func1(stoi(s));
         else 
             func2();
