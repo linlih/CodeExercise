@@ -17,7 +17,7 @@ int main(int argc, char const *argv[]) {
     for (j = i + 1; a[j] == b[j] && j < n; ++j);
     if (j == n) {
         cout << "Insertion Sort" << endl;
-        sort(a, a + i + 2);
+        sort(a, a + i + 1);
     }
     else {
         cout << "Merge Sort" << endl;
