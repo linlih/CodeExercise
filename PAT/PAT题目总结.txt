@@ -22,7 +22,7 @@
     使用深度优先搜索的方法
     供应链最大价格 1090.Highest Price in Supply Chain (25分)
     供应链所有价格 1079.Total Sales of Supply Chain (25分)
-
+    供应链最小价格 1106.Lowest Price in Supply Chain (25分)
     辈分人数最多  1094. The Largest Generation (25) 
 
     广度优先搜索
