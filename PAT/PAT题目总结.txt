@@ -24,13 +24,18 @@
     供应链所有价格 1079.Total Sales of Supply Chain (25分)
 
     辈分人数最多  1094. The Largest Generation (25) 
+
     广度优先搜索
     查找符合条件的矩阵信息 1091.Acute Stroke (30分)
+    将数值分解为指定个数的数值次方和 1103 Integer Factorization (30分)
 
 6. 逻辑题
     判断字符串是否存在对应数量字符 1092.To Buy or Not to Buy (20分)
     根据条件排序车辆停留时间       1095. Cars on Campus (30) 
     连续因数                       1096.Consecutive Factors (20分)
+    序列所有非空子序列的和         1104.Sum of Number Segments (20分)
+    顺时针打印有序矩阵             1105.Spiral Matrix (25分)
+          拓展：逆时针打印呢？
 
 7. 链表
     去掉链表中重复的元素 1097. Deduplication on a Linked List (25)

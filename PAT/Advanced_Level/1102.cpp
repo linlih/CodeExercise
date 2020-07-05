@@ -27,7 +27,7 @@ int find_root() {
         inorder(i);
         if (cnt == n)
             return i;
-    } 
+    }
 }
 
 void invert(int i) {
