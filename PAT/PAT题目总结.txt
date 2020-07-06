@@ -6,6 +6,9 @@
     并查集
     找到每个人归属的社群  1107.Social Clusters (30分)
 
+    完全二叉树判断 1110 Complete Binary Tree (25分)
+        拓展：如何判断满二叉树
+
 2. 图
     dfs+dijkstra      1087.All Roads Lead to Rome (30分)
 
@@ -39,6 +42,8 @@
     序列所有非空子序列的和         1104.Sum of Number Segments (20分)
     顺时针打印有序矩阵             1105.Spiral Matrix (25分)
           拓展：逆时针打印呢？
+    求满足要求数值的平均值          1108 Finding Average (20分)
+    按照身高要求排列队伍拍照        1109 Group Photo (25分)
 
 7. 链表
     去掉链表中重复的元素 1097. Deduplication on a Linked List (25)
