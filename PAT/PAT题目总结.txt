@@ -11,6 +11,7 @@
 
 2. 图
     dfs+dijkstra      1087.All Roads Lead to Rome (30分)
+    地图路径的时间最短和路程最短 1111.Online Map (30分)
 
 3. 算术运算
     这两道题的核心是最大公约数的求法，使用辗转相除法
@@ -44,6 +45,7 @@
           拓展：逆时针打印呢？
     求满足要求数值的平均值          1108 Finding Average (20分)
     按照身高要求排列队伍拍照        1109 Group Photo (25分)
+    找到键盘损坏的按键              1112 Stucked Keyboard (20分)
 
 7. 链表
     去掉链表中重复的元素 1097. Deduplication on a Linked List (25)
