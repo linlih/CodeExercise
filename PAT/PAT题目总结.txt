@@ -46,6 +46,7 @@
     求满足要求数值的平均值          1108 Finding Average (20分)
     按照身高要求排列队伍拍照        1109 Group Photo (25分)
     找到键盘损坏的按键              1112 Stucked Keyboard (20分)
+    分割数组寻找子数组的最大差值    1113.Integer Set Partition (25分)
 
 7. 链表
     去掉链表中重复的元素 1097. Deduplication on a Linked List (25)
