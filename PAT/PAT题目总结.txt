@@ -5,9 +5,12 @@
 
     并查集
     找到每个人归属的社群  1107.Social Clusters (30分)
+                          1114
 
     完全二叉树判断 1110 Complete Binary Tree (25分)
         拓展：如何判断满二叉树
+    
+    求二叉搜索树高度最大和次大的结点个数 1115 Counting Nodes in a BST (30分)
 
 2. 图
     dfs+dijkstra      1087.All Roads Lead to Rome (30分)
