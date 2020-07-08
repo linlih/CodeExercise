@@ -5,47 +5,15 @@
 #include <bits/stdc++.h>
 
 using namespace std;
+int a[100000];
 int main(int argc, char const *argv[]) {
     freopen("input.txt","r",stdin);
-    int k;
-    cin >> k;
-    string str;
-    cin >> str;
-    map<char, int> m;
-    stack<char> st;
-    string out;
-    unordered_set<char> brokenkey;
-    for (int i = 0; i < str.size(); ++i) {
-        if (st.empty()) st.push(str[i]);
-        else if (st.top() != str[i]) {
-            if  (st.size() >= k) {
-                if (m.find(st.top()) == m.end()) {
-                    m[st.top()] = 1;
-                    brokenkey.insert(st.top());
-                }
-                else {
-                    m[st.top()] = 2;
-                }
-            }
-            while(!st.empty()) st.pop();
-            st.push(str[i]);
-            out.push_back(str[i]);
-        }
-        else if (st.top() == str[i]) {
-            st.push(str[i]);
-        }
-    }
-    for (auto it = brokenkey.begin(); it != brokenkey.end(); ++it) {
-        if (m[*it] == 2)
-            cout << *it;
-    }
-    cout << endl;
-    for (int i = 0; i < str.size(); ++i) {
-        if (m.find(str[i]) != m.end()) 
-            if (m[str[i]] == 2)
-                i += (k-1);   
-        cout << str[i];
-    }
-    cout << endl;
+    int n, e = 0;
+    scanf("%d", &n);
+    for (int i = 0; i < n; ++i) 
+        scanf("%d", &a[i]);
+    sort(a, a + n, greater<int>());
+    while (e < n && a[e] > e + 1) e++;
+    printf("%d", e);
     return 0;
 }
