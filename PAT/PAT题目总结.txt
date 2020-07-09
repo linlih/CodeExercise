@@ -58,6 +58,7 @@
     按照要求输出指定排名奖品        1116 Come on! Let's C (20分)
     输出满足要求的数值              1117.Eddington Number (25分)
     输出唯一每一位数值和            1120.Friend Numbers (20分)
+    输出参加聚会的“单身人士”         1121.Damn Single (25分)
 
 7. 链表
     去掉链表中重复的元素 1097. Deduplication on a Linked List (25)
