@@ -56,7 +56,8 @@
     找到键盘损坏的按键              1112 Stucked Keyboard (20分)
     分割数组寻找子数组的最大差值    1113.Integer Set Partition (25分)
     按照要求输出指定排名奖品        1116 Come on! Let's C (20分)
-    输出满足要求的数值              1117 Eddington Number (25分)
+    输出满足要求的数值              1117.Eddington Number (25分)
+    输出唯一每一位数值和            1120.Friend Numbers (20分)
 
 7. 链表
     去掉链表中重复的元素 1097. Deduplication on a Linked List (25)
