@@ -10,8 +10,12 @@
 
     完全二叉树判断 1110 Complete Binary Tree (25分)
         拓展：如何判断满二叉树
+    求解平衡二叉树的根节点 1066.Root of AVL Tree (25分)
     
     求二叉搜索树高度最大和次大的结点个数 1115 Counting Nodes in a BST (30分)
+
+    给定前序后序输出中序  1119.Pre- and Post-order Traversals (30分)
+        拓展：给定前序中序或者后序中序，如何重新构建二叉树？
 
 2. 图
     dfs+dijkstra      1087.All Roads Lead to Rome (30分)
