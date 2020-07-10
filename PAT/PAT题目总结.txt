@@ -2,6 +2,7 @@
 1. 树
     二叉树的遍历：前序，中序，后序  1086.Tree Traversals Again (25分)
     创建一颗二叉搜索树   1099.Build A Binary Search Tree (30分)
+    创建平衡二叉树+判断完全二叉树 1123 Is It a Complete AVL Tree (30分)
 
     并查集
     找到每个人归属的社群  1107.Social Clusters (30分)
