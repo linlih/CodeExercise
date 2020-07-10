@@ -21,6 +21,7 @@
 2. 图
     dfs+dijkstra      1087.All Roads Lead to Rome (30分)
     地图路径的时间最短和路程最短 1111.Online Map (30分)
+    判断是否为圆的简单路径   1122 Hamiltonian Cycle (25分)
 
 3. 算术运算
     这两道题的核心是最大公约数的求法，使用辗转相除法
@@ -60,6 +61,7 @@
     输出满足要求的数值              1117.Eddington Number (25分)
     输出唯一每一位数值和            1120.Friend Numbers (20分)
     输出参加聚会的“单身人士”         1121.Damn Single (25分)
+    输出满足要求的获奖者            1124.Raffle for Weibo Followers (20分)
 
 7. 链表
     去掉链表中重复的元素 1097. Deduplication on a Linked List (25)
