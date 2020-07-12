@@ -17,6 +17,8 @@
 
     给定前序后序输出中序  1119.Pre- and Post-order Traversals (30分)
         拓展：给定前序中序或者后序中序，如何重新构建二叉树？
+    
+    表达式树输出中序   1130 Infix Expression (25分)
 
 2. 图
     dfs+dijkstra      1087.All Roads Lead to Rome (30分)
@@ -62,6 +64,9 @@
     输出唯一每一位数值和            1120.Friend Numbers (20分)
     输出参加聚会的“单身人士”         1121.Damn Single (25分)
     输出满足要求的获奖者            1124.Raffle for Weibo Followers (20分)
+    前半部分后半部分的乘积可以整除原数 1132 Cut Integer (20分)
+    判断序列是否满足N皇后的排列    1128 N Queens Puzzle (20分)
+    按照访问频率输出推荐结果     1129 Recommendation System (25分)
 
 7. 链表
     去掉链表中重复的元素 1097. Deduplication on a Linked List (25)

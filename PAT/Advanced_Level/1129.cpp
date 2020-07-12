@@ -28,7 +28,7 @@ int main(int argc, char const *argv[]) {
 
         cout << temp << ":";
         for (auto it: out) {
-           cout << " " << it.first <<":" << it.second;
+           cout << " " << it.first;
         }
         cout << endl;
 
@@ -53,8 +53,14 @@ int main(int argc, char const *argv[]) {
             if (out.size() < k)
                 out.push_back({temp, cnt[temp]});
             else {
-                if (cnt[temp] > out[k-1].second)
-                    out[k-1] = {temp, cnt[temp]};
+                if (cnt[temp] != out[k-1].second ){
+                    if (cnt[temp] > out[k-1].second)
+                        out[k-1] = {temp, cnt[temp]};
+                }
+                else {
+                    if (temp < out[k-1].first)
+                        out[k-1] = {temp, cnt[temp]};
+                }
             }
         }
         // cout << "after found";
