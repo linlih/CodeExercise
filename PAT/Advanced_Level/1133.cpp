@@ -76,6 +76,7 @@ int main(int argc, char const *argv[]) {
         scanf("%d%d%d", &s, &d, &e);
         a[s] = {s, d, e};
     }
+    // 用了一个取巧的办法，从而避免了单链表数据调整的麻烦
     for (; begin != -1; begin = a[begin].next)
         v.push_back(a[begin]);
     for (int i = 0; i < v.size(); ++i) 

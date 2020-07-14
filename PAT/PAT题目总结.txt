@@ -20,6 +20,8 @@
     
     表达式树输出中序   1130 Infix Expression (25分)
 
+    给定前序中序，输出后序 1138 Postorder Traversal (25分)
+
 2. 图
     dfs+dijkstra      1087.All Roads Lead to Rome (30分)
     地图路径的时间最短和路程最短 1111.Online Map (30分)

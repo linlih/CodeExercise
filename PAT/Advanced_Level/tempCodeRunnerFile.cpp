@@ -6,63 +6,39 @@
 
 using namespace std;
 
-vector<int> cnt(50010, 0);
-bool cmp(pair<int, int> &n1, pair<int, int> &n2) {
-    if (n1.second != n2.second)
-        return n1.second >= n2.second;
-    else 
-        return n1.first < n2.first;
+long long tonum(string s) {
+    long long res = 0;
+    long index = 1;
+    for (int i = s.size() - 1; i >= 0; --i) {
+        res += (index * (s[i]-'0'));
+        index*=10;
+    }
+    return res;
+}
+
+bool judge(string s) {
+    for (int i = 0; i < s.size()/2; ++i)
+        if (s[i] != s[s.size() - 1 - i])
+            return false;
+    return true;
 }
 
 int main(int argc, char const *argv[]) {
     freopen("input.txt","r",stdin);
-    int n, k;
-    cin >> n >> k;
-    int temp;
-    scanf("%d", &temp);
-    cnt[temp]++;
-    vector<pair<int, int> > out;// first item, second cnt
-    out.push_back({temp, cnt[temp]});
-    for (int i = 1; i < n; ++i) {
-        scanf("%d", &temp);
-
-        cout << temp << ":";
-        for (auto it: out) {
-           cout << " " << it.first <<":" << it.second;
+    long long n;
+    cin >> n;
+    for (int i = 0; i < 10; ++i) {
+        string num = to_string(n);
+        reverse(num.begin(), num.end());
+        long long re_n = tonum(num);
+        long long res = n + re_n;
+        cout << n << " + " << re_n << " = " << res << endl;
+        if (judge(to_string(res))) {
+            cout << res << " is a palindromic number." << endl;
+            return 0;
         }
-        cout << endl;
-
-        cnt[temp]++;
-        //cout << "cnt: " << temp << " " << cnt[temp] << endl;
-        bool found = false;
-        // for (auto it : out) {
-        //     if (it.first == temp) {
-        //         it.second = cnt[temp];
-        //         cout << "it "<< it.first << ":" << it.second << endl;
-        //         found = true;
-        //     }
-        //     //it.second = cnt[it.first];
-        // }
-        for (int i = 0; i < k; ++i) {
-            if (out[i].first == temp) {
-                out[i].second = cnt[temp];
-                found = true;
-            }
-        }
-        if (!found) {
-            if (out.size() < k)
-                out.push_back({temp, cnt[temp]});
-            else {
-                if (cnt[temp] > out[k-1].second)
-                    out[k-1] = {temp, cnt[temp]};
-            }
-        }
-        // cout << "after found";
-        // for (auto it: out) {
-        //    cout << " " << it.first <<":" << it.second;
-        // }
-        // cout << endl;
-        sort(out.begin(), out.end(), cmp);
+        n = res;
     }
+    cout << "Not found in 10 iterations." << endl;
     return 0;
 }

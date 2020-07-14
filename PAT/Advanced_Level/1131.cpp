@@ -2,8 +2,17 @@
 #include <vector>
 #include <unordered_map>
 using namespace std;
+
+
+/**
+ * ref:https://blog.csdn.net/liuchuo/article/details/68925193
+ */
+
 vector<vector<int>> v(10000);
-int visit[10000], minCnt, minTransfer, start, end1;
+int visit[10000];
+int minCnt; // 中途经停最少的站
+int minTransfer; // 需要换乘的最小次数
+int start, end1;
 unordered_map<int, int> line;
 vector<int> path, tempPath;
 int transferCnt(vector<int> a) {
