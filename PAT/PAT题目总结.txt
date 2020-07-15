@@ -34,6 +34,8 @@
     有理数分数四则运算     1088.Rational Arithmetic (20分)
     有理数分数求和         1081.Rational Sum (20分)
 
+    哈希表计算   1145.Hashing - Average Search Time (25分)
+
 4. 排序
     判断是否是插入排序，归并排序的序列 1089.Insert or Merge (25分)
         延展：如果是判断是否是快排序列，选择排序序列，桶排序序列呢？
