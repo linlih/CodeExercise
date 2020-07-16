@@ -29,6 +29,8 @@
     地图路径的时间最短和路程最短 1111.Online Map (30分)
     判断是否为圆的简单路径   1122 Hamiltonian Cycle (25分)
 
+    判断拓扑排序序列    1146 Topological Order (25分)
+
 3. 算术运算
     这两道题的核心是最大公约数的求法，使用辗转相除法
     有理数分数四则运算     1088.Rational Arithmetic (20分)
