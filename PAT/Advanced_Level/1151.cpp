@@ -61,6 +61,9 @@ int main(int argc, char const *argv[]) {
     for (int i = 0; i < m; ++i) {
         int a, b;
         scanf("%d %d", &a, &b);
+    
+
+
         vector<int> path, patha, pathb;
         flag = false;
         preorder(root, a, path, patha);
@@ -78,9 +81,9 @@ int main(int argc, char const *argv[]) {
         else if (pathb[pathb.size() - 2] == a)
             printf("%d is an ancestor of %d.\n", a, b);
         else 
-            for (int i = 0; i < patha.size(); ++i) {
-                if (patha[i] != pathb[i]) {
-                    printf("LCA of %d and %d is %d.\n", a, b, patha[i-1]);
+            for (int j = 0; j < patha.size(); ++j) {
+                if (patha[j] != pathb[j]) {
+                    printf("LCA of %d and %d is %d.\n", a, b, patha[j-1]);
                     break;
                 }
                 //cout << patha[i] << " " << pathb[i] << endl;

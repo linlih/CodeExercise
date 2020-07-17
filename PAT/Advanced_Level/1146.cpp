@@ -41,7 +41,7 @@ bool judge(vector<int> &node) {
     //     }
     // }
 
-    /** 这个方法一个测试样例过不了 **/
+    /** 这个方法一个测试样例过不了, 过不了的原因是memcpy函数拷贝indegree导致的 **/
     for (int i = 1; i < n; ++i) {
         for (int j = 0; j < e[node[i-1]].size(); ++j) {
             tmpdegree[e[node[i-1]][j]]--;
