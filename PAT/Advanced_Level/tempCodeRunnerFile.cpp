@@ -5,86 +5,61 @@
 #include <bits/stdc++.h>
 
 using namespace std;
+vector<int> v(2010, -1);
+int n;
+bool maxheap = false;
+bool minheap = false;
 
-struct node {
-    int val;
-    node *left, *right;
-};
-
-vector<int> pre, in;
-
-node *build(int preL, int preR, int inL, int inR) {
-    if(preL > preR) return NULL;
-    //cout << preL << " " << preR << " " << inL << " " << inR << endl;
-    node *root = new node;
-    root->val = pre[preL];
-    int k;
-    for (k = inL; k <= inR; ++k) {
-        if (in[k] == pre[preL]) break;
+int flag = -1;
+set<int> s;
+void print_path(int i, vector<int> &path) {
+    if (i > n) return;
+    path.push_back(v[i]);
+    if (2*i <= n && (2*i) <= n && v[i] > v[2*i] && v[i] > v[2*i  + 1]) {
+        //maxheap = true; minheap = false;
+        //flag = -1;
+        s.insert(1);
+        //cout << "max: " << v[i] << " " << v[2 *i] << " " << v[2*i + 1] << endl;
     }
-    int numLeft = k - inL;
-    root->left = build(preL + 1, preL + numLeft, inL, k - 1);
-    root->right = build(preL + numLeft + 1, preR , k + 1, inR);
-    return root;
-}
-
-bool flag = false;
-void preorder(node *root, int x, vector<int> &path, vector<int> &ans) {
-    if (root == NULL||flag == true) return ;
-    path.push_back(root->val);
-    if (root->val == x) {
-        ans = path;
-        flag = true;
+    if (2*i <= n && (2*i) <= n && v[i] < v[2*i] && v[i] < v[2*i  + 1]) {
+        //maxheap = false; minheap = true;
+        //flag = 1;
+        s.insert(-1);
+        //cout << "min: "<< v[i] << " " << v[2 *i] << " " << v[2*i + 1] << endl;
     }
-    //cout << root->val << endl;
-    preorder(root->left, x, path, ans);
-    preorder(root->right, x, path, ans);
+    if ((2 * i > n) && ((2*i + 1) > n)) {
+        for (int j = 0; j < path.size(); ++j) {
+            if (j != 0) printf(" ");
+            //cout << path.size() << endl;
+            printf("%d", path[j]);
+        }
+        printf("\n");
+    }
+    print_path(2*i + 1, path);
+    print_path(2*i, path);
     path.pop_back();
 }
 
 int main(int argc, char const *argv[]) {
     freopen("input.txt","r",stdin);
-    int m, n;
-    scanf("%d %d", &m, &n);
-    for (int i = 0; i < n; ++i) {
-        int a;
-        scanf("%d", &a);
-        in.push_back(a);
+    scanf("%d", &n);
+    for (int i = 1; i <= n; ++i) {
+        scanf("%d", &v[i]);
     }
-    for (int i = 0; i < n; ++i) {
-        int a;
-        scanf("%d", &a);
-        pre.push_back(a);
-    }
-    node *root = build(0, n-1, 0, n-1);
-
-    for (int i = 0; i < m; ++i) {
-        int a, b;
-        scanf("%d %d", &a, &b);
-        vector<int> path, patha, pathb;
-        flag = false;
-        preorder(root, a, path, patha);
-        path.clear();
-        flag = false;
-        preorder(root, b, path, pathb);
-        if (patha.size() == 0 && pathb.size() == 0)
-            printf("ERROR: %d and %d are not found.\n", a, b);
-        else if (patha.size() == 0)
-            printf("ERROR: %d is not found.\n", a);
-        else if (pathb.size() == 0)
-            printf("ERROR: %d is not found.\n", b);
-        else if (patha[patha.size() - 2] == b)
-            printf("%d is an ancestor of %d.\n", b, a);
-        else if (pathb[pathb.size() - 2] == a)
-            printf("%d is an ancestor of %d.\n", a, b);
+    vector<int> path;
+    print_path(1, path);
+    // if (minheap)
+    //     printf("Min Heap\n");
+    // else if (maxheap)
+    //     printf("Max Heap\n");
+    // else
+    //     printf("Not Heap\n");
+    if (s.size() > 1)
+        printf("Not Heap\n");
+    else 
+        if (*s.begin() == 1)
+            printf("Max Heap\n");
         else 
-            for (int i = 0; i < patha.size(); ++i) {
-                if (patha[i] != pathb[i]) {
-                    printf("LCA of %d and %d is %d.\n", a, b, patha[i-1]);
-                    break;
-                }
-                //cout << patha[i] << " " << pathb[i] << endl;
-            }
-    }
+            printf("Min Heap\n");
     return 0;
 }
