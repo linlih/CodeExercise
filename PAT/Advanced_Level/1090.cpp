@@ -26,7 +26,7 @@ void dfs(int index, int depth) {
 int main(int argc, char const *argv[]) {
     freopen("input.txt","r",stdin);
     double p, r;
-    scanf("%d %l %f", &n, &p, &r);
+    scanf("%d %lf %lf", &n, &p, &r);
     for (int i = 0; i < n; ++i) {
         scanf("%d", &temp);
         if (temp == -1)

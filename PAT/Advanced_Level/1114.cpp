@@ -69,7 +69,7 @@ int main(int argc, char const *argv[]) {
         scanf("%d %d", &data[i].num, &data[i].area);
     }
     for (int i = 0; i < n; i++) {
-        int id = find(data[i].id);
+        int id = find(data[i].id); // 统计每个家庭成员的数据信息
         ans[id].id = id;
         ans[id].num += data[i].num;
         ans[id].area += data[i].area;
@@ -77,9 +77,9 @@ int main(int argc, char const *argv[]) {
     }
     for (int i = 0;i < 10000; i++) {
         if (visit[i]) 
-            ans[find(i)].people++;
+            ans[find(i)].people++; // 统计家庭成员个数
         if (ans[i].flag)
-            cnt++;
+            cnt++; // 统计家庭个数
     }
     for (int i = 0; i < 10000; ++i) {
         if (ans[i].flag) {

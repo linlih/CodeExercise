@@ -140,13 +140,13 @@
 
 /*
    问题描述：
-   解题思路： 
+   解题思路： https://blog.csdn.net/liuchuo/article/details/79618849
  */
 #include <bits/stdc++.h>
 
 using namespace std;
 
-map<int, bool> mp;
+map<int, bool> mp; // 标记树中出现的结点
 
 int main(int argc, char const *argv[]) {
     freopen("input.txt","r",stdin);

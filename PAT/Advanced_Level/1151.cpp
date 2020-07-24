@@ -125,12 +125,12 @@ map<int, int> pos;
 vector<int> in, pre;
 void lca(int inl, int inr, int preRoot, int a, int b) {
     if (inl > inr) return;
-    int inRoot = pos[pre[preRoot]], aIn = pos[a], bIn = pos[b];
-    if (aIn < inRoot && bIn < inRoot)
+    int inRoot = pos[pre[preRoot]], aIn = pos[a], bIn = pos[b]; // 获得位置信息
+    if (aIn < inRoot && bIn < inRoot)  // 如果a和b都是在根节点的左边，那么在左子树寻找lca
         lca (inl, inRoot - 1, preRoot + 1, a, b);
-    else if ((aIn < inRoot && bIn > inRoot) || (aIn > inRoot && bIn < inRoot))
+    else if ((aIn < inRoot && bIn > inRoot) || (aIn > inRoot && bIn < inRoot)) // 如果落在根节点的两边，那么当前根节点就是a和b的lca
         printf("LCA of %d and %d is %d.\n", a, b, in[inRoot]);
-    else if (aIn > inRoot && bIn > inRoot)
+    else if (aIn > inRoot && bIn > inRoot) // 如果a和b都落在根节点的右边，那么在右子树中寻找
         lca(inRoot + 1, inr, preRoot + 1 + (inRoot - inl), a, b);
     else if (aIn == inRoot)
         printf("%d is an ancestor of %d.\n", a, b);
