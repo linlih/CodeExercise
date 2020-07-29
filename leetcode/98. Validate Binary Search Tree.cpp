@@ -46,3 +46,42 @@ public:
         return res;
     }
 };
+
+class Solution {
+public:
+    bool helper(TreeNode *root, TreeNode *min, TreeNode *max) {
+        if (root == NULL) return true;
+
+        if (min != NULL && root->val <= min->val) return false;
+        if (max != NULL && root->val >= max->val) return false;
+        
+        return helper(root->left, min, root) && helper(root->right, root, max);
+    }
+    bool isValidBST(TreeNode* root) {
+        bool res = helper(root, NULL, NULL);
+        return res;
+    }
+};
+
+// 思路是这样，根据inorder的特性，使用堆栈的方式来判断即可
+// 这样就不需要得到整个inorder的序列，然后在遍历判断
+class Solution {
+public:
+    bool isValidBST(TreeNode* root) {
+        stack<TreeNode*> s;
+        //int inorder = INT_MIN; // 这里会存在一个样例测试错误：当树只有值为INT_MIN的根节点
+        long inorder = INT64_MIN; // 改成这个的话就没有问题， inorder记录的中序序列的前一个值
+        while(!s.empty() || root!=NULL) {
+            while(root!=NULL) {
+                s.push(root);
+                root=root->left;
+            }
+            root = s.top();
+            s.pop();
+            if (root->val <= inorder) return false;
+            inorder = root->val;
+            root = root->right;
+        }
+        return true;
+    }
+};
