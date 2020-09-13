@@ -81,6 +81,12 @@
     判断序列是否满足N皇后的排列    1128 N Queens Puzzle (20分)
     按照访问频率输出推荐结果     1129 Recommendation System (25分)
     按照要求输出学校成绩排名 1141 PAT Ranking of Institutions (25分)
+    按照英文数字格式输出加法结果  1001 A+B Format
 
 7. 链表
     去掉链表中重复的元素 1097. Deduplication on a Linked List (25)
+
+
+
+第二遍卡壳的题目：
+
