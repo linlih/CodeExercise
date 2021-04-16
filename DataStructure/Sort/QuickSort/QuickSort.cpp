@@ -12,14 +12,16 @@ template <class Record>
 int Partition(Record Array[], int left, int right) {
     int l = left;
     int r = right;
-    Record TempRecord = Array[r];
+    Record TempRecord = Array[r]; // 锚点放在下标为r的位置
     while (l != r) {
+        // 从左边找到比锚点大的值
         while (Array[l] <= TempRecord &&  r > l) 
             l++;
         if (l < r) {
             Array[r] = Array[l];
             r--;
         }
+        // 从右边找到比锚点小的值
         while (Array[r] > TempRecord && r > l)
             r--;
         if (l < r) {
